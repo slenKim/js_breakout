@@ -258,6 +258,7 @@ function drawBall() {
     ctx.closePath();
 }
 
+
 function createBricks() {
     bricks = [];
     for (let r = 0; r < BRICK_ROWS; r++) {
@@ -272,13 +273,14 @@ function createBricks() {
             };
         }
     }
+
+    // 무작위 황금 벽돌 1개 지정
+    const specialRow = Math.floor(Math.random() * BRICK_ROWS);
+    const specialCol = Math.floor(Math.random() * BRICK_COLS);
+
+    bricks[specialRow][specialCol].special = true;
 }
 
- // 무작위 황금 벽돌 1개 지정
-const specialRow = Math.floor(Math.random() * BRICK_ROWS);
-const specialCol = Math.floor(Math.random() * BRICK_COLS);
-
-bricks[specialRow][specialCol].special = true;
 
 function drawBricks() {
     for (let r = 0; r < BRICK_ROWS; r++) {

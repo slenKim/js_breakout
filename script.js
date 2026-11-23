@@ -36,7 +36,7 @@ const PADDLE_SPEED_RATIO = DEFAULT_PADDLE_SPEED / DEFAULT_BALL_SPEED;
 
 // Paddle setup
 let paddle = {
-    width: 200,
+    width: 500,
     height: 10,
     x: SCREEN_WIDTH / 2 - 80,
     y: SCREEN_HEIGHT - 50,

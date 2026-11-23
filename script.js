@@ -36,7 +36,7 @@ const PADDLE_SPEED_RATIO = DEFAULT_PADDLE_SPEED / DEFAULT_BALL_SPEED;
 
 // Paddle setup
 let paddle = {
-    width: 500,
+    width: 200,
     height: 10,
     x: SCREEN_WIDTH / 2 - 80,
     y: SCREEN_HEIGHT - 50,
@@ -45,7 +45,7 @@ let paddle = {
 
 // Ball setup
 let ball = {
-    radius: 15,
+    radius: 100,
     x: SCREEN_WIDTH / 2,
     y: SCREEN_HEIGHT / 2,
     dx: DEFAULT_BALL_SPEED * (Math.random() < 0.5 ? 1 : -1),

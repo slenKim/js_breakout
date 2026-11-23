@@ -45,7 +45,7 @@ let paddle = {
 
 // Ball setup
 let ball = {
-    radius: 100,
+    radius: 20,
     x: SCREEN_WIDTH / 2,
     y: SCREEN_HEIGHT / 2,
     dx: DEFAULT_BALL_SPEED * (Math.random() < 0.5 ? 1 : -1),
@@ -274,13 +274,21 @@ function createBricks() {
     }
 }
 
+ // 무작위 황금 벽돌 1개 지정
+const specialRow = Math.floor(Math.random() * BRICK_ROWS);
+const specialCol = Math.floor(Math.random() * BRICK_COLS);
+
+bricks[specialRow][specialCol].special = true;
+
 function drawBricks() {
     for (let r = 0; r < BRICK_ROWS; r++) {
         for (let c = 0; c < BRICK_COLS; c++) {
             if (bricks[r][c].status === 1) {
                 ctx.beginPath();
                 ctx.rect(bricks[r][c].x, bricks[r][c].y, BRICK_WIDTH, BRICK_HEIGHT);
-                ctx.fillStyle = COLOR_RED;
+                // 황금 벽돌이면 금색, 일반 벽돌이면 빨간색
+                ctx.fillStyle = bricks[r][c].special ? 'gold' : COLOR_RED;
+
                 ctx.fill();
                 ctx.closePath();
             }
